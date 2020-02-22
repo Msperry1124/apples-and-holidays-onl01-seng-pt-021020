@@ -90,7 +90,7 @@ add_new_holiday_with_supplies(holiday_supplies, :fall, :succas, ["lulav", "esrog
 
 
 # Here we create a whole new season at what we could call the the "season-echelon"
-# The new echelon being created apparently must always be left of the 
+# The new echelon being created apparently must always be left of the
 # equals (=) sign as shown below on line 94
 def add_new_season_and_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   holiday_hash[season] = {holiday_name => supply_array} # the new echelon being created is to the left of the equals sign.
@@ -122,7 +122,7 @@ def all_supplies_in_holidays(holiday_hash)
      holiday.each do |holiday, item|
        puts "  #{holiday.to_s.split("_").map {|i| i.capitalize}.join(" ")}: #{item.join(", ")}"
      end
-  end 
+  end
 end
 
 all_supplies_in_holidays(holiday_supplies)
@@ -135,15 +135,8 @@ def all_holidays_with_bbq(holiday_hash)
   holiday_hash.map do |season, holiday|
     holiday.map do |holiday, item|
       holiday if item.include?("BBQ")
-    end 
+    end
   end.flatten.compact
 end
 
 all_holidays_with_bbq(holiday_supplies)
-
-
-
-
-
-
-
